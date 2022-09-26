@@ -1,0 +1,77 @@
+<hr>
+<div class="container">
+
+    <form (ngSubmit)="crearLibro()" [formGroup]="validarFormulario" id="validarFormulario">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label > Título</label>
+                <input type="text" class="form-control" placeholder="Título"
+                formControlName="titulo">
+            </div>
+            <div class="form-group col-md-6">
+                <label > Autor</label>
+                <input type="text" class="form-control" placeholder="Autor"
+                formControlName="autor">
+            </div>
+            
+        </div>
+        <div class="form-group">
+            <label >Año de publicación</label>
+            <input type="text" class="form-control" placeholder="Año de publicación"
+            formControlName="apublicacion">
+        </div>
+        <div class="form-group">
+            <label >Editorial</label>
+            <input type="text" class="form-control" placeholder="Editorial"
+            formControlName="editorial">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label > Categoría</label>
+                <input type="text" class="form-control" placeholder="Categoría"
+                formControlName="categoria">
+            </div>
+            <div class="form-group col-md-6">
+                <label > Sede</label>
+                <input type="text" class="form-control" placeholder="Sede"
+                formControlName="sede">
+            </div>
+            
+        </div>
+
+        <button type="submit" class="btn btn-primary">Crear Libro</button>
+
+    </form>
+
+    <hr>
+
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Autor</th>
+                <th scope="col">Título</th>
+                <th scope="col">Año de P.</th>
+                <th scope="col">Editorial</th>
+                <th scope="col">Categoría</th>
+                <th scope="col">Sede</th>
+                <th scope="col">Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let lista of listadeLibros let i=index" >
+                <th scope="row">{{ i+1 }}</th>
+                <td>{{ lista.autor }}</td>
+                <td>{{ lista.titulo }}</td>
+                <td>{{ lista.apublicacion }}</td>
+                <td>{{ lista.editorial }}</td>
+                <td>{{ lista.categoria }}</td>
+                <td>{{ lista.sede }}</td>
+                <td>
+                    <button class="btn btn-primary" [routerLink]="['/lists', lista._id]" >Editar</button>
+                </td>                
+            </tr>
+        </tbody>
+    </table>
+
+</div>

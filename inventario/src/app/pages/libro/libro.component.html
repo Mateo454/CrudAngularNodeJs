@@ -1,0 +1,61 @@
+<hr>
+<div class="container">
+
+    <form [formGroup]="validarFormulario">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label > Título</label>
+                <input type="text" class="form-control" placeholder="Título"
+                formControlName="titulo"
+                name="detallesLibro.titulo" [(ngModel)]="detallesLibro.titulo">
+                <span *ngIf="validarFormulario.controls.titulo.errors && validarFormulario.controls.titulo.touched">Favor de llenar el titulo</span>
+            </div>
+            <div class="form-group col-md-6">
+                <label > Autor</label>
+                <input type="text" class="form-control" placeholder="Autor"
+                formControlName="autor"
+                name="detallesLibro.autor" [(ngModel)]="detallesLibro.autor">
+            </div>
+            
+        </div>
+        <div class="form-group">
+            <label >Año de publicación</label>
+            <input type="text" class="form-control" placeholder="Año de publicación"
+            formControlName="apublicacion"
+            name="detallesLibro.apublicacion" [(ngModel)]="detallesLibro.apublicacion">
+        </div>
+        <div class="form-group">
+            <label >Editorial</label>
+            <input type="text" class="form-control" placeholder="Editorial"
+            formControlName="editorial"
+            name="detallesLibro.editorial" [(ngModel)]="detallesLibro.editorial">
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label > Categoría</label>
+                <input type="text" class="form-control" placeholder="Categoría"
+                formControlName="categoria"
+                name="detallesLibro.categoria" [(ngModel)]="detallesLibro.categoria">
+            </div>
+            <div class="form-group col-md-6">
+                <label > Sede</label>
+                <input type="text" class="form-control" placeholder="Sede"
+                formControlName="sede"
+                name="detallesLibro.sede" [(ngModel)]="detallesLibro.sede">
+            </div>
+            
+        </div>
+
+        <div class="row">
+            <div class="col-md-10">
+                <button (click)="editarLibro()" class="btn btn-primary">Editar Libro</button>
+            </div>
+            <div class="col-md-2">
+                <button (click)="eliminarLibro(detallesLibro._id)" class="btn btn-danger">Eliminar</button>
+            </div>
+        </div>
+
+    </form>
+
+    <hr>
+</div>

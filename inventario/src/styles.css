@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+html {
+    margin: 0;
+    background-color: #454d55;
+}
+
+body {
+
+    background-color: #454d55;
+    color: #FFFF;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+span {
+    color: rgb(245, 57, 57);
+}
